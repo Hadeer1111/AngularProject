@@ -1,0 +1,27 @@
+
+<div style="text-align:center;">
+  <div><a routerLink="/details/{{product.id}}">
+    <img src="{{product.url}}" alt="" class="image">
+  </a>
+  </div>
+<div>
+  <p>
+    {{product.name}}
+  </p>
+  <p>
+    {{product.price}}
+  </p>
+
+  <input type="number" placeholder="1" id="quantity" name="quantity" min="1" style="width:2%; height: 20px;;">
+  <br>
+  <br>
+  <button (click)="add(product)">Add to cart</button>
+</div>
+</div>
+
+
+
+
+
+
+
