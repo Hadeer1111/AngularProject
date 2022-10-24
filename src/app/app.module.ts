@@ -14,6 +14,7 @@ import { CartComponent } from './cart/cart.component'
 import { FormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
 import { OrderConfirmationPageComponent } from './order-confirmation-page/order-confirmation-page.component';
+import { CartProductComponent } from './cart-product/cart-product.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { OrderConfirmationPageComponent } from './order-confirmation-page/order-
     ProductItemDetailsComponent,
     CartComponent,
     FormComponent,
-    OrderConfirmationPageComponent
+    OrderConfirmationPageComponent,
+    CartProductComponent
   ],
   imports: [
     BrowserModule,

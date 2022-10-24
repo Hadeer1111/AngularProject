@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'app-form',
@@ -11,7 +12,7 @@ export class FormComponent implements OnInit {
   address:string;
   credit:number;
 
-  constructor() {
+  constructor(private dataservice: DataServiceService) {
     this.name="";
     this.address="";
     this.credit=0;
@@ -21,7 +22,13 @@ export class FormComponent implements OnInit {
   }
 
   submitForm(){
+      console.log(this.name);
+      this.dataservice.sendNamePrice(this.name,0);
+  }
 
+  send(){
+    console.log(this.name);
+      this.dataservice.sendNamePrice(this.name,0);
   }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
 import { data } from '../models/data';
 
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -9,21 +10,31 @@ import { data } from '../models/data';
 })
 export class CartComponent implements OnInit {
 
-  cart:data[];
+  cartArray:data[]=[];
 
+  cart:data = {
+    id:1,
+    name:"",
+    price:0,
+    url:"",
+    description:"",
+    quantity:1
+  };
+
+  total:number=0;
 
   constructor(private dataService: DataServiceService) {
-      this.cart=[];
+
 
   }
 
   ngOnInit(): void {
-     this.dataService.getCart().subscribe(
-      data =>{
-        this.cart=data;
-      console.log(this.cart);
-      }
-     );
+    this.cartArray = this.dataService.getCart();
+    for(let i=0; i< this.cartArray.length; i++){
+      this.total += this.cartArray[i].price * this.cartArray[i].quantity;
+    }
+    this.dataService.sendPrice(this.total);
+    //this.cartArray.push(this.cart);
   }
 
 

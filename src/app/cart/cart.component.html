@@ -1,2 +1,6 @@
 
+<div *ngFor="let cart of cartArray">
+<app-cart-product [cart] = "cart" ></app-cart-product>
+</div>
+<p>total: {{total}}</p>
 <app-form></app-form>

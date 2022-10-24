@@ -13,9 +13,9 @@
   <p>
     {{product.description}}
   </p>
-  <input type="number" id="quantity" name="quantity" min="1" style="width:2%; height: 2%;">
+  <input type="number" id="quantity" placeholder="1" value="1" #quantity name="quantity" min="1" style="width:2%; height: 2%;">
   <br>
   <br>
-  <button>Add to cart</button>
+  <button (click)="add(product, quantity.value)">Add to cart</button>
 </div>
 </div>

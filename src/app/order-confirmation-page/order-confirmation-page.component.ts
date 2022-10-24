@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'app-order-confirmation-page',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderConfirmationPageComponent implements OnInit {
 
-  constructor() { }
+  success:any={
+    name:"",
+    total:0
+  }
+
+  price:number=0;
+
+  constructor(private dataService: DataServiceService) { }
 
   ngOnInit(): void {
+    this.success = this.dataService.getNamePrice();
+    this.price = this.dataService.getPrice();
   }
 
 }
